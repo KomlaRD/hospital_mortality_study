@@ -51,6 +51,8 @@ df |>
 ```
 
 ```{r glimpse-dataset}
-
+# Glimpse dataset
+df |>
+  glimpse()
 ```
 

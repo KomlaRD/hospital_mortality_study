@@ -28,9 +28,19 @@ df <- clean_names(df)
 ```
 
 ```{r de-identify-dataset}
-df |> 
+# Remove PII columns and redundant columns
+df <- df |> 
   select(-c(
-    P
+    patient_name,
+    patient_name,
+    mobile,
+    address,
+    emergency_contact,
+    emergency_contact_name,
+    mortuary_patient_tag,
+    mortuary_out_date,
+    mortuary_added_date,
+    action
   ))
 ```
 

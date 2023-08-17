@@ -5,12 +5,17 @@ format: html
 ---
 
 ```{r load-packages}
+# Load packages
 pacman::p_load(
   tidyverse, # Data wrangling and visualisation
-  readxl, # Import dataset
   skimr, # Skim data
   gtsummary, # Table summary
-  rio # Export dataset
+  rio # Import and export dataset
 )
+```
+
+```{r import-dataset}
+# Import dataset
+read_excel("data/mortality_data.xls", skip = 5)
 ```
 

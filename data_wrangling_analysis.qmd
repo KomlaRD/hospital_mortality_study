@@ -11,12 +11,26 @@ pacman::p_load(
   skimr, # Skim data
   gtsummary, # Table summary
   rio, # Import and export dataset
-  here # File management
+  here, # File management
+  janitor # Clean names
 )
 ```
 
 ```{r import-dataset}
 # Import dataset
 df <- import(here("data","mortality_data.xlsx"), skip = 5)
+```
+
+
+```{r clean-names}
+# Clean column names
+df <- clean_names(df)
+```
+
+```{r de-identify-dataset}
+df |> 
+  select(-c(
+    P
+  ))
 ```
 

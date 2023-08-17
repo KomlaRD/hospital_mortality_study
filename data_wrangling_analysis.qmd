@@ -44,3 +44,13 @@ df <- df |>
   ))
 ```
 
+```{r skim-dataset}
+# Skim dataset
+df |>
+  skim()
+```
+
+```{r glimpse-dataset}
+
+```
+

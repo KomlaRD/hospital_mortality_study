@@ -56,3 +56,9 @@ df |>
   glimpse()
 ```
 
+```{r data-wrangling}
+# TODO: Appropriate data types
+# TODO: Convert age into numeric data
+# TODO: Inspect dataset for additional cleaning elements
+```
+

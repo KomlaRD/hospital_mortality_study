@@ -32,7 +32,7 @@ df <- clean_names(df)
 df <- df |> 
   select(-c(
     patient_name,
-    patient_name,
+    patient_number,
     mobile,
     address,
     emergency_contact,

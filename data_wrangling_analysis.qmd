@@ -1,0 +1,16 @@
+---
+title: "Hospital mortality in a tertiary hospital in Ghana"
+author: "Eric Anku"
+format: html
+---
+
+```{r load-packages}
+pacman::p_load(
+  tidyverse, # Data wrangling and visualisation
+  readxl, # Import dataset
+  skimr, # Skim data
+  gtsummary, # Table summary
+  rio # Export dataset
+)
+```
+

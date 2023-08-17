@@ -10,12 +10,13 @@ pacman::p_load(
   tidyverse, # Data wrangling and visualisation
   skimr, # Skim data
   gtsummary, # Table summary
-  rio # Import and export dataset
+  rio, # Import and export dataset
+  here # File management
 )
 ```
 
 ```{r import-dataset}
 # Import dataset
-read_excel("data/mortality_data.xls", skip = 5)
+df <- import(here("data","mortality_data.xlsx"), skip = 5)
 ```
 

@@ -61,9 +61,14 @@ df |>
 df |> 
   mutate(
     numeric_age = gsub("\\D", " ", age) # Extract years from age variable and convert to numeric data,
-    
+
   )
 # TODO: Convert age into numeric data
 # TODO: Inspect dataset for additional cleaning elements
 ```
 
+# Exploratory data analysis
+
+```r
+skim(df)
+```

@@ -60,7 +60,7 @@ df |>
 # TODO: Appropriate data types
 df |> 
   mutate(
-    numeric_age = gsub("\\D", " ", age) # Extract years from age variable and convert to numeric data,
+    numeric_age = str_replace_all(age, "\\D", " ") # Extract years from age variable and convert to numeric data,
 
   )
 # TODO: Convert age into numeric data

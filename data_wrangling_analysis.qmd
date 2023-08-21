@@ -12,7 +12,8 @@ pacman::p_load(
   gtsummary, # Table summary
   rio, # Import and export dataset
   here, # File management
-  janitor # Clean names
+  janitor, # Clean names
+  finalfit # Labelling
 )
 ```
 
@@ -69,6 +70,9 @@ df |>
 
 # Exploratory data analysis
 
-```r
+
+```{r}
 skim(df)
 ```
+
+

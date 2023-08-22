@@ -59,7 +59,7 @@ df |>
 
 ```{r data-wrangling}
 # Data cleaning 
-df |> 
+df <- df |> 
   mutate(
     # Extract years from age variable and convert to numeric data
     numeric_age = str_replace_all(age, "\\D", " ") |>
@@ -93,7 +93,9 @@ df |>
 ```
 
 ```{r remove-existing-age}
-# 
+# Remove existing age variable
+df <- df |>
+  select(-age)
 ```
 
 # Exploratory data analysis

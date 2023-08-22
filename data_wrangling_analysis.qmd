@@ -58,14 +58,32 @@ df |>
 ```
 
 ```{r data-wrangling}
-# TODO: Appropriate data types
+# Data cleaning 
 df |> 
   mutate(
-    numeric_age = str_replace_all(age, "\\D", " ") # Extract years from age variable and convert to numeric data,
-
+    # Extract years from age variable and convert to numeric data
+    numeric_age = str_replace_all(age, "\\D", " ") |>
+      # Label age variable
+      ff_label("Age (years"), 
+    # Convert age into factor and label
+    gender = factor(gender) |>
+      ff_label("Sex"),
+    # Convert occupation into factor and label
+    occupation = factor(occupation) |>
+      ff_label("Occupation"),
+    # Convert education into factor and label
+    education = factor(education) |>
+      ff_label("Educational status"),
+    # Convert deceased date into date and label
+    deceased_date = dmy(deceased_date) |>
+      ff_label("Deceased date"),
+    # Convert patient location into factor and label
+    patient_death_location = factor(patient_death_location) |>
+      ff_label("Death location"),
+    # Convert date of admission into date and label
+    date_of_admission = ymd(date_of_admission) |>
+      ff_label("Date of admission")
   )
-# TODO: Convert age into numeric data
-# TODO: Inspect dataset for additional cleaning elements
 ```
 
 # Exploratory data analysis

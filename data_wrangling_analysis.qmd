@@ -86,6 +86,16 @@ df |>
   )
 ```
 
+```{r glimpse-data-inspection}
+# Inspect dataset
+df |>
+  glimpse()
+```
+
+```{r remove-existing-age}
+# 
+```
+
 # Exploratory data analysis
 
 

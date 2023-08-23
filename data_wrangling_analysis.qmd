@@ -124,9 +124,9 @@ df |>
 ```{r barcharts-factor}
 barcharts <- function(df, x) {
   df |>
-  ggplot(aes(x)) +
+  ggplot(aes(fct_infreq(x))) +
   geom_bar() +
-    coord_flip()
+  coord_flip()
 }
 
 # Bar chart for gender

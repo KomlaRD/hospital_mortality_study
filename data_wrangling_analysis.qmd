@@ -118,6 +118,30 @@ skim(df)
 ```
 
 ```{r histogram-age}
-gghis
+df |>
+  gghistostats(numeric_age)
+```
+```{r barcharts-factor}
+barcharts <- function(df, x) {
+  df |>
+  ggplot(aes(x)) +
+  geom_bar() +
+    coord_flip()
+}
+
+# Bar chart for gender
+barcharts(df, df$gender)
+
+# Bar chart for occupation
+barcharts(df, df$occupation)
+
+# Bar chart for education
+barcharts(df, df$education)
+
+# Bar chart for patient date location
+barcharts(df, df$patient_death_location)
+```
+```{r additional-cleaning}
+# Factor recode occupation, education, patient date location
 ```
 

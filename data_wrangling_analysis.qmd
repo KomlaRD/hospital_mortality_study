@@ -69,19 +69,19 @@ df <- df |>
       # Label age variable
       ff_label("Age (years)"), 
     # Convert age into factor and label
-    gender = factor(gender) |>
+    gender = fct(gender) |>
       ff_label("Sex"),
     # Convert occupation into factor and label
-    occupation = factor(occupation) |>
+    occupation = fct(occupation) |>
       ff_label("Occupation"),
     # Convert education into factor and label
-    education = factor(education) |>
+    education = fct(education) |>
       ff_label("Educational status"),
     # Convert deceased date into date and label
     deceased_date = dmy_hms(deceased_date) |>
       ff_label("Deceased date"),
     # Convert patient location into factor and label
-    patient_death_location = factor(patient_death_location) |>
+    patient_death_location = fct(patient_death_location) |>
       ff_label("Death location"),
     # Convert date of admission into date and label
     date_of_admission = ymd(date_of_admission) |>
@@ -141,6 +141,25 @@ barcharts(df, df$education)
 # Bar chart for patient date location
 barcharts(df, df$patient_death_location)
 ```
+
+
+```{r check-levels-occupation}
+# OCcupation
+levels(df$occupation)
+```
+
+
+```{r check-levels-education}
+# Education
+levels(df$education)
+```
+
+```{r check-levels-death-location}
+# Patient death location
+levels(df$patient_death_location)
+```
+
+
 ```{r additional-cleaning}
 # Factor recode occupation, education, patient date location
 ```

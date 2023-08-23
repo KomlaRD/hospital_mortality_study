@@ -13,7 +13,8 @@ pacman::p_load(
   rio, # Import and export dataset
   here, # File management
   janitor, # Clean names
-  finalfit # Labelling
+  finalfit, # Labelling
+  ggstatsplot # Exploratory data analysis
 )
 ```
 
@@ -57,6 +58,8 @@ df |>
   glimpse()
 ```
 
+
+
 ```{r data-wrangling}
 # Data cleaning 
 df <- df |> 
@@ -64,7 +67,7 @@ df <- df |>
     # Extract years from age variable and convert to numeric data
     numeric_age = str_replace_all(age, "\\D", " ") |>
       # Label age variable
-      ff_label("Age (years"), 
+      ff_label("Age (years)"), 
     # Convert age into factor and label
     gender = factor(gender) |>
       ff_label("Sex"),
@@ -75,14 +78,16 @@ df <- df |>
     education = factor(education) |>
       ff_label("Educational status"),
     # Convert deceased date into date and label
-    deceased_date = dmy(deceased_date) |>
+    deceased_date = dmy_hms(deceased_date) |>
       ff_label("Deceased date"),
     # Convert patient location into factor and label
     patient_death_location = factor(patient_death_location) |>
       ff_label("Death location"),
     # Convert date of admission into date and label
     date_of_admission = ymd(date_of_admission) |>
-      ff_label("Date of admission")
+      ff_label("Date of admission"),
+    # Convert numeric age to numeric
+    numeric_age = as.integer(numeric_age)
   )
 ```
 
@@ -92,17 +97,27 @@ df |>
   glimpse()
 ```
 
+
+```{r missing-data}
+# Glimpse missing data
+df |>
+  missing_glimpse()
+```
+
 ```{r remove-existing-age}
 # Remove existing age variable
 df <- df |>
   select(-age)
 ```
 
-# Exploratory data analysis
+## Exploratory data analysis
 
 
 ```{r}
 skim(df)
 ```
 
+```{r histogram-age}
+gghis
+```
 
